@@ -1,0 +1,12 @@
+#modifier dans lenv que je souhaite les variables denv
+# quand on est en dev , on va ajouter une entree au niveau de ce qui est ecirt dans la variable pat
+# cest le path dans le fichier deploymenet.yaml
+#
+- op: add
+  path: "/spec/template/spec/containers/0/env"
+  value:
+      - name: API_URL
+        valueFrom:
+          configMapKeyRef:
+            name: guestbook-cm
+            key: API_URL

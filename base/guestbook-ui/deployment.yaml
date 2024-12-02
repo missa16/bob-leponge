@@ -14,7 +14,13 @@ spec:
         app: guestbook-ui
     spec:
       containers:
-      - image: gcr.io/heptio-images/ks-guestbook-demo:0.1
+      - image: gcr.io/heptio-images/ks-guestbook-demo:0.1 #les containers qui vont tourner dans le pod
         name: guestbook-ui
         ports:
         - containerPort: 80
+        # env: #mettre ne place une variable denv
+        #   - name : API_URL
+        #     valueFrom : 
+        #       configMapKeyRef:
+        #         key: API_URL
+        #         name : guestbook-cm
