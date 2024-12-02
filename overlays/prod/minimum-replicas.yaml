@@ -1,0 +1,7 @@
+#je decris un deploiement comme dhabitude
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foire-au-replica
+spec:
+  replicas: 2
